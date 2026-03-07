@@ -3,19 +3,15 @@ LIBFT = libft
 LIBFTM = libft/libft.a
 PRINTF = ft_printf
 PRINTFLIB = ft_printf/libftprintf.a
-CC = cc -g
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-CFILES = 	push_swap.c			\
-			utils.c				\
-			sort_func.c 		\
-			sort_small_func.c	\
-			sort.c				\
-			swap.c				\
-			push.c				\
-			rotate.c			\
-			r_rotate.c			\
-			quick_sort.c		\
-			free_error.c
+CFILES =	main.c			\
+			linked_list.c	\
+			check.c			\
+			error_handle.c	\
+			steps/push.c	\
+			steps/swap.c	\
+			steps/rotate.c
 
 OBJS = $(CFILES:.c=.o)
 
