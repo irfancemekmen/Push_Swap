@@ -3,22 +3,24 @@ LIBFT = libft
 LIBFTM = libft/libft.a
 PRINTF = ft_printf
 PRINTFLIB = ft_printf/libftprintf.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-CFILES =	main.c			\
-			linked_list.c	\
-			check.c			\
-			error_handle.c	\
-			steps/push.c	\
-			steps/swap.c	\
-			steps/rotate.c
+CC = cc -g
+CFILES =	main.c					\
+			check.c					\
+			error_handle.c			\
+			linked_list.c			\
+			qsort.c					\
+			sorting.c				\
+			steps/push.c			\
+			steps/swap.c			\
+			steps/rotate.c			\
+			steps/reverse_rotate.c	\
 
 OBJS = $(CFILES:.c=.o)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT)
 	make -C $(PRINTF)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFTM) $(PRINTFLIB) -o $(NAME)
+	$(CC) $(OBJS) $(LIBFTM) $(PRINTFLIB) -o $(NAME)
 
 all: $(NAME)
 

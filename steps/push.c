@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:54:59 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/07 02:55:38 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/11 00:44:13 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 
-	if (!stack_a || !*stack_a)
-		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
 	tmp->next = *stack_b;

@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:42:21 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/07 03:33:47 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/09 23:37:26 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include "ft_printf/ft_printf.h"
 #include "libft/libft.h"
 #include <stdlib.h>
+#include <unistd.h>
 
-static t_stack	*ft_new_node(int nbr)
+static t_stack	*new_node(int nbr)
 {
 	t_stack	*new;
 
@@ -27,7 +28,7 @@ static t_stack	*ft_new_node(int nbr)
 	return (new);
 }
 
-static void	ft_stack_add_back(t_stack **stack, t_stack *new)
+static void	stack_add_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*tmp;
 
@@ -44,21 +45,20 @@ static void	ft_stack_add_back(t_stack **stack, t_stack *new)
 	tmp->next = new;
 }
 
-static void	ft_stack_clear(t_stack **stack)
+void	stack_clear(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	if (!stack)
-		return ;
-	while (*stack)
+
+	while (stack)
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
 	}
 }
 
-void	add_to_linked_list(char **av)
+t_stack	*add_to_linked_list(char **av)
 {
 	t_stack	*stack;
 	t_stack	*new;
@@ -68,16 +68,14 @@ void	add_to_linked_list(char **av)
 	i = 0;
 	while (av[i])
 	{
-		new = ft_new_node(ft_atoi(av[i]));
+		new = new_node(ft_atoi(av[i]));
 		if (!new)
 		{
-			ft_stack_clear(&stack);
-			ft_error_handle("Memory allocation error!");
+			stack_clear(stack);
+			error_handle("Memory allocation error!");
 		}
-		ft_stack_add_back(&stack, new);
+		stack_add_back(&stack, new);
 		i++;
 	}
-	ft_check_number_repeat(stack);
-	ft_start_sorting(stack);
-	ft_stack_clear(&stack);
+	return (stack);
 }

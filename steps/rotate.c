@@ -6,21 +6,21 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:53:05 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/07 02:53:32 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/09 22:53:19 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "../ft_printf/ft_printf.h"
 
-void	ra(t_stack *stack)
+void	ra(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		first_nbr;
 
-	if (!stack || !stack->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	tmp = stack;
+	tmp = *stack;
 	first_nbr = tmp->nbr;
 	while (tmp->next)
 	{
@@ -31,14 +31,14 @@ void	ra(t_stack *stack)
 	ft_printf("ra\n");
 }
 
-void	rb(t_stack *stack)
+void	rb(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		first_nbr;
 
-	if (!stack || !stack->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	tmp = stack;
+	tmp = *stack;
 	first_nbr = tmp->nbr;
 	while (tmp->next)
 	{
@@ -49,17 +49,17 @@ void	rb(t_stack *stack)
 	ft_printf("rb\n");
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
 	int		first_nbr_a;
 	int		first_nbr_b;
 
-	if ((!stack_a || !stack_a->next) || (!stack_b || !stack_b->next))
+	if ((!stack_a || !*stack_a || !(*stack_a)->next) || (!stack_b || !*stack_b || !(*stack_b)->next))
 		return ;
-	tmp_a = stack_a;
-	tmp_b = stack_b;
+	tmp_a = *stack_a;
+	tmp_b = *stack_b;
 	first_nbr_a = tmp_a->nbr;
 	first_nbr_b = tmp_b->nbr;
 	while (tmp_a->next)

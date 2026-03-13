@@ -6,14 +6,15 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 03:30:34 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/07 03:31:00 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/09 23:34:58 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
+#include <stdlib.h>
 
-void	ft_error_handle(char *str)
+void	error_handle(char *str)
 {
 	ft_printf("%s\n", str);
 	exit(1);
