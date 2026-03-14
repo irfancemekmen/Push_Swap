@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 23:00:00 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/09 23:36:52 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/14 01:39:23 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	free_arg(char **av)
 	free(av);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack	*stack;
 

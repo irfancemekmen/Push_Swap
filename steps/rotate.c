@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:53:05 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/09 22:53:19 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/14 01:45:37 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ void	rr(t_stack **stack_a, t_stack **stack_b)
 	int		first_nbr_a;
 	int		first_nbr_b;
 
-	if ((!stack_a || !*stack_a || !(*stack_a)->next) || (!stack_b || !*stack_b || !(*stack_b)->next))
+	if ((!stack_a || !*stack_a || !(*stack_a)->next) || (!stack_b || !*stack_b
+			|| !(*stack_b)->next))
 		return ;
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;

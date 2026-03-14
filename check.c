@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:46:42 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/09 23:35:54 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/14 03:30:05 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	check_one_argument(char *str)
 	{
 		if (str[i] == ' ')
 			i++;
-		else if ((str[i] < '0' || str[i] > '9') && str[i] != '-' && str[i] != '+')
+		else if ((str[i] < '0' || str[i] > '9') && str[i] != '-'
+			&& str[i] != '+')
 			error_handle("Argument error!");
 		else if (str[i] == '-' || str[i] == '+')
 		{
@@ -44,7 +45,8 @@ void	check_arguments(char **av)
 	while (av[i])
 	{
 		j = 0;
-		if ((av[i][0] < '0' || av[i][0] > '9') && av[i][0] != '-' && av[i][0] != '+')
+		if ((av[i][0] < '0' || av[i][0] > '9') && av[i][0] != '-'
+			&& av[i][0] != '+')
 			error_handle("Argument error!");
 		else if (av[i][0] == '-' || av[i][0] == '+')
 		{
@@ -75,13 +77,26 @@ void	check_number_repeat(t_stack *stack)
 	}
 }
 
-int	is_sorted(t_stack *stack)
+int	is_sorted_n(t_stack *stack, int size)
 {
-	while (stack && stack->next)
+	while (stack && stack->next && size > 1)
 	{
 		if (stack->nbr > stack->next->nbr)
 			return (0);
 		stack = stack->next;
+		size--;
+	}
+	return (1);
+}
+
+int	is_sorted_b(t_stack *stack, int size)
+{
+	while (stack && stack->next && size > 1)
+	{
+		if (stack->nbr < stack->next->nbr)
+			return (0);
+		stack = stack->next;
+		size--;
 	}
 	return (1);
 }

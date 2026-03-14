@@ -9,6 +9,7 @@ CFILES =	main.c					\
 			error_handle.c			\
 			linked_list.c			\
 			qsort.c					\
+			qsort_utils.c			\
 			sorting.c				\
 			steps/push.c			\
 			steps/swap.c			\

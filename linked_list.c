@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:42:21 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/09 23:37:26 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/14 01:39:09 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static void	stack_add_back(t_stack **stack, t_stack *new)
 void	stack_clear(t_stack *stack)
 {
 	t_stack	*tmp;
-
 
 	while (stack)
 	{

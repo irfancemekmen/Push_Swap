@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 23:22:51 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/14 01:31:38 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/14 02:47:14 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ void	separation(t_stack **stack_a, t_stack **stack_b, int size)
 void	start_sorting(t_stack **stack_a)
 {
 	t_stack	*stack_b;
-	int	size;
+	int		size;
 
 	stack_b = NULL;
 	size = stack_size(*stack_a);
-	if (!is_sorted(*stack_a))
+	if (!is_sorted_n(*stack_a, size))
 	{
 		if (size == 2)
 			sa(stack_a);
