@@ -6,12 +6,12 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 22:34:09 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/09 23:16:08 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/30 12:08:18 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include "../ft_printf/ft_printf.h"
+#include "push_swap.h"
+#include "ft_printf/ft_printf.h"
 #include <stdlib.h>
 
 void	rra(t_stack **stack)

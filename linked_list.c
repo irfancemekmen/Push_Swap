@@ -6,15 +6,13 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:42:21 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/14 01:39:09 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/30 12:07:09 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf/ft_printf.h"
 #include "libft/libft.h"
 #include <stdlib.h>
-#include <unistd.h>
 
 static t_stack	*new_node(int nbr)
 {

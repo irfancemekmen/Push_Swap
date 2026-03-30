@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 02:46:42 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/14 03:30:05 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/28 12:44:20 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	check_arguments(char **av)
 	}
 }
 
-void	check_number_repeat(t_stack *stack)
+void	check_number_repeat(t_stack *stack, char **av)
 {
 	t_stack	*tmp1;
 	t_stack	*tmp2;
@@ -70,7 +70,11 @@ void	check_number_repeat(t_stack *stack)
 		while (tmp2)
 		{
 			if (tmp1->nbr == tmp2->nbr)
+			{
+				free_arg(av);
+				stack_clear(stack);
 				error_handle("Error: Duplicate numbers!");
+			}
 			tmp2 = tmp2->next;
 		}
 		tmp1 = tmp1->next;

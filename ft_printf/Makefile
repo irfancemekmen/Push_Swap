@@ -1,22 +1,26 @@
-NAME = libftprintf.a
-CC = cc
-CFLAGS = -Wall -Werror -Wextra
+NAME	= libftprintf.a
+CC		= cc
+CFLAGS	= -Wall -Werror -Wextra
+OBJDIR	= ../obj/ft_printf_obj
+SRC		=	ft_printf.c \
+			ft_func.c
 
-SRC = ft_printf.c \
-		ft_func.c
-
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
 
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $?
+	@ar rcs $(NAME) $?
+
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 

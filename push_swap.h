@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 22:58:26 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/14 03:30:37 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/28 12:42:27 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_stack
 }					t_stack;
 
 t_stack	*add_to_linked_list(char **av);
-void	check_number_repeat(t_stack *stack);
+void	check_number_repeat(t_stack *stack, char **av);
 void	start_sorting(t_stack **stack);
 void	check_one_argument(char *str);
 void	check_arguments(char **av);
@@ -33,9 +33,10 @@ void	qsort_check_a(t_stack **a, t_stack **b, int size, int count);
 void	qsort_check_b(t_stack **a, t_stack **b, int size, int count);
 void	get_pivot(t_stack *stack, int size, int *pivot);
 void	sort_three(t_stack **stack);
-void	not_three_size(t_stack **stack_a, t_stack **stack_b, int size);
-void	ft_bubble_sort(int *tmp_stack, int size);
+void	not_three_size(t_stack **stack_a, t_stack **stack_b, int *size);
+void	bubble_sort(int *tmp_stack, int size);
 void	is_need_double_swap(t_stack **stack_a, t_stack **stack_b);
+void	free_arg(char **av);
 
 void	sa(t_stack **stack);
 void	sb(t_stack **stack);
