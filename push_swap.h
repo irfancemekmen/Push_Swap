@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 22:58:26 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/28 12:42:27 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/30 17:10:53 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-t_stack	*add_to_linked_list(char **av);
-void	check_number_repeat(t_stack *stack, char **av);
+t_stack	*add_to_linked_list(char **av, int flag);
+void	check_number_repeat(t_stack *stack);
 void	start_sorting(t_stack **stack);
 void	check_one_argument(char *str);
 void	check_arguments(char **av);
@@ -37,6 +37,8 @@ void	not_three_size(t_stack **stack_a, t_stack **stack_b, int *size);
 void	bubble_sort(int *tmp_stack, int size);
 void	is_need_double_swap(t_stack **stack_a, t_stack **stack_b);
 void	free_arg(char **av);
+void	free_helper(t_stack *stack, char **av, char **splitted, int flag);
+void	free_splitted(char **splitted);
 
 void	sa(t_stack **stack);
 void	sb(t_stack **stack);
@@ -51,6 +53,5 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 
 void	rra(t_stack **stack);
 void	rrb(t_stack **stack);
-void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif

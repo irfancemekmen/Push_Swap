@@ -6,14 +6,14 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:25:14 by iekmen            #+#    #+#             */
-/*   Updated: 2024/11/06 10:05:32 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/30 16:02:53 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	sign;
-	int	res;
+	long	res;
+	int		sign;
 
 	sign = 1;
 	res = 0;
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 			sign *= -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*str >= '0' && *str <= '9' )
 	{
 		res = (res * 10) + (*str - '0');
 		str++;

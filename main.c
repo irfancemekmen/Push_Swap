@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 23:00:00 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/30 12:06:15 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/30 15:52:24 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ int	main(int ac, char **av)
 	{
 		check_one_argument(av[1]);
 		av = ft_split(av[1], ' ');
-		stack = add_to_linked_list(av);
-		check_number_repeat(stack, av);
+		stack = add_to_linked_list(av, 1);
+		free_arg(av);
+		check_number_repeat(stack);
 		start_sorting(&stack);
 		stack_clear(stack);
-		free_arg(av);
 	}
 	else
 	{
 		check_arguments(av + 1);
-		stack = add_to_linked_list(av + 1);
-		check_number_repeat(stack, NULL);
+		stack = add_to_linked_list(av + 1, 0);
+		check_number_repeat(stack);
 		start_sorting(&stack);
 		stack_clear(stack);
 	}

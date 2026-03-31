@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 00:23:17 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/30 11:03:05 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/30 17:44:42 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,14 @@ void	qsort_b(t_stack **stack_a, t_stack **stack_b, int *size, int count)
 
 void	stack_b_process(t_stack **stack_a, t_stack **stack_b, int size)
 {
-	while (size || !((*stack_a)->nbr < (*stack_a)->next->nbr && (*stack_a)->next->nbr < (*stack_a)->next->next->nbr))
+	while (size || !((*stack_a)->nbr < (*stack_a)->next->nbr
+			&& (*stack_a)->next->nbr < (*stack_a)->next->next->nbr))
 	{
 		if (size == 1 && (*stack_a)->nbr > (*stack_a)->next->nbr)
 			sa(stack_a);
-		else if (size == 1 || (size >= 2 && (*stack_b)->nbr > (*stack_b)->next->nbr) || (size == 3
-				&& (*stack_b)->nbr > (*stack_b)->next->next->nbr))
+		else if (size == 1 || (size >= 2 && (*stack_b)->nbr
+				> (*stack_b)->next->nbr) || (size == 3 && (*stack_b)->nbr
+				> (*stack_b)->next->next->nbr))
 		{
 			pa(stack_a, stack_b);
 			size--;

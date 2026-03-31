@@ -10,14 +10,14 @@
 * **sa/sb/ss**: Yığının en üstündeki ilk iki elemanı yer değiştirir.
 * **pa/pb**: Bir yığının tepesindeki elemanı alıp diğer yığının tepesine koyar.
 * **ra/rb/rr**: Yığındaki tüm elemanları 1 pozisyon yukarı kaydırır; ilk eleman sonuncu olur.
-* **rra/rrb/rrr**: Yığındaki tüm elemanları 1 pozisyon aşağı kaydırır; son eleman birinci olur.
+* **rra/rrb**: Yığındaki tüm elemanları 1 pozisyon aşağı kaydırır; son eleman birinci olur.
 
 ---
 
 ## Instructions
 
 ### Compilation
-Proje, `cc` derleyicisi ve `-Wall -Wextra -Werror` bayrakları kullanılarak bir `Makefile` aracılığıyla derlenmelidir[cite: 102]. `Makefile` en az şu kuralları içermelidir: `$(NAME)`, `all`, `clean`, `fclean` ve `re`[cite: 104].
+Proje, `cc` derleyicisi ve `-Wall -Wextra -Werror` bayrakları kullanılarak bir `Makefile` aracılığıyla derlenmelidir. `Makefile` en az şu kuralları içermelidir: `$(NAME)`, `all`, `clean`, `fclean` ve `re`.
 
 ```bash
 make

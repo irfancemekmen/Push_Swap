@@ -6,7 +6,7 @@
 /*   By: iekmen <iekmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 22:34:09 by iekmen            #+#    #+#             */
-/*   Updated: 2026/03/30 12:08:18 by iekmen           ###   ########.fr       */
+/*   Updated: 2026/03/30 17:11:00 by iekmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,4 @@ void	rrb(t_stack **stack)
 	last->next = *stack;
 	*stack = last;
 	ft_printf("rrb\n");
-}
-
-void	rrr(t_stack **stack_a, t_stack **stack_b)
-{
-	rra(stack_a);
-	rrb(stack_b);
-	ft_printf("rrr\n");
 }
